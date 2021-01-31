@@ -1,0 +1,33 @@
+{
+    "extends": "eslint-config-bamboo",
+    "compilerOptions": {
+        "baseUrl": ".",
+        "module": "commonjs",
+        "outDir": "./dist",
+        "paths": {
+            "@lib/*": [
+                "src/lib/*"
+            ],
+            "@root/*": [
+                "*"
+            ],
+            "@utils/*": [
+                "src/lib/util/*"
+            ]
+        },
+        "rootDir": "./",
+        "target": "ES2019",
+		"types": [
+			"node",
+			"discord.js",
+			"klasa"
+		]
+    },
+    "exclude": [
+        "**/node_modules",
+        "**/dist"
+    ],
+    "include": [
+        "./src/**/*"
+    ]
+}
