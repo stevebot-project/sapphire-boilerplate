@@ -1,38 +1,39 @@
 {
-  "name": "ts-boilerplate",
+  "name": "kc-ts",
   "version": "1.0.0",
-  "description": "Boilerplate for creating TypeScript bots with Discord.js v12 and Klasa v1.0.0-alpha",
+  "description": "Bot for the Kindness Challenge, written using TypeScript",
   "main": "dist/src/bot.js",
   "scripts": {
     "start": "node --harmony dist/src/bot.js",
     "build": "tsc -p .",
     "build-clear": "rm -rf dist && tsc -p .",
+    "dev": "tsc -p . && node --harmony dist/src/bot.js",
+    "dev-clear": "rm -rf dist && tsc -p . && node --harmony dist/src/bot.js",
     "test": "eslint src",
     "lint": "eslint src --fix"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tuataria/ts-boilerplate.git"
+    "url": "git+https://github.com/tuataria/kc-ts.git"
   },
   "keywords": [],
   "author": "Tuataria",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/tuataria/ts-boilerplate/issues"
+    "url": "https://github.com/tuataria/kc-ts/issues"
   },
-  "homepage": "https://github.com/tuataria/ts-boilerplate#readme",
+  "homepage": "https://github.com/tuataria/kc-ts#readme",
   "dependencies": {
-    "discord.js": "^12.1.1",
-    "klasa": "github:dirigeants/klasa#v1.0.0-alpha",
+    "discord.js": "^12.5.1",
     "module-alias": "^2.2.2",
     "mongodb": "^3.5.4"
   },
   "devDependencies": {
     "@types/mongodb": "^3.3.16",
-    "@typescript-eslint/eslint-plugin": "^2.21.0",
-    "@typescript-eslint/parser": "^2.21.0",
-    "eslint": "^6.8.0",
+    "@typescript-eslint/eslint-plugin": "^4.14.1",
+    "@typescript-eslint/parser": "^4.14.1",
+    "eslint": "^7.19.0",
     "eslint-config-bamboo": "^3.0.0",
-    "typescript": "^3.8.2"
+    "typescript": "^4.1.3"
   }
 }
