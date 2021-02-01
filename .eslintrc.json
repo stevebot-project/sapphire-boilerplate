@@ -1,5 +1,5 @@
 {
-	"extends": "bamboo",
+	"extends": ["@skyra"],
 	"rules": {
 		"@typescript-eslint/no-throw-literal": 0,
 		"@typescript-eslint/restrict-plus-operands": 0,

@@ -1,32 +1,19 @@
 {
-    "extends": "eslint-config-bamboo",
-    "compilerOptions": {
-        "baseUrl": ".",
-        "module": "commonjs",
-        "outDir": "./dist",
-        "paths": {
-            "@lib/*": [
-                "src/lib/*"
-            ],
-            "@root/*": [
-                "*"
-            ],
-            "@utils/*": [
-                "src/lib/util/*"
-            ]
-        },
-        "rootDir": "./",
-        "target": "ES2019",
-		"types": [
-			"node",
-			"discord.js"
-		]
-    },
-    "exclude": [
-        "**/node_modules",
-        "**/dist"
-    ],
-    "include": [
-        "./src/**/*"
-    ]
+	"extends": "@skyra/eslint-config",
+	"compilerOptions": {
+		"target": "ES2020",
+		"useDefineForClassFields": true,
+		"esModuleInterop": true,
+		"resolveJsonModule": true,
+		"outDir": "../dist",
+		"rootDir": ".",
+		"baseUrl": ".",
+		"paths": {
+			"@lib/*": ["lib/*"],
+			"@root/*": ["*"]
+		},
+		"composite": true,
+		"declaration": true,
+		"moduleResolution": "node"
+	}
 }
