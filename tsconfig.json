@@ -19,8 +19,7 @@
         "target": "ES2019",
 		"types": [
 			"node",
-			"discord.js",
-			"klasa"
+			"discord.js"
 		]
     },
     "exclude": [

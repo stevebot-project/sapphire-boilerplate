@@ -24,12 +24,16 @@
   },
   "homepage": "https://github.com/tuataria/kc-ts#readme",
   "dependencies": {
+    "@sapphire/decorators": "^2.0.3",
+    "@sapphire/framework": "^1.0.0-alpha.4",
     "discord.js": "^12.5.1",
+    "dotenv": "^8.2.0",
     "module-alias": "^2.2.2",
     "mongodb": "^3.5.4"
   },
   "devDependencies": {
     "@types/mongodb": "^3.3.16",
+    "@types/ws": "^7.4.0",
     "@typescript-eslint/eslint-plugin": "^4.14.1",
     "@typescript-eslint/parser": "^4.14.1",
     "eslint": "^7.19.0",
