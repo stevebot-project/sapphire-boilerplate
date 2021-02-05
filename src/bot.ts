@@ -1,9 +1,10 @@
 /* eslint-disable-next-line @typescript-eslint/no-var-requires */
 require('dotenv').config();
 import 'module-alias/register';
-import { SapphireClient } from '@sapphire/framework';
 
-const bot = new SapphireClient({
+import { EnceladusClient } from './lib/EnceladusClient';
+
+const bot = new EnceladusClient({
 	defaultPrefix: 'f;',
 	presence: {
 		activity: {

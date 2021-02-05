@@ -8,8 +8,12 @@ import { Message } from 'discord.js';
 export default class extends Command {
 
 	public async run(msg: Message) {
-		const pingMsg = await msg.channel.send('Ping?');
-		return pingMsg.edit(`Pong! Your ping is ${pingMsg.createdTimestamp - msg.createdTimestamp}ms. I'm working with Sapphire!`);
+		const pingMsg = await msg.channel.sendTranslated('commands:ping.ping') as Message;
+		return pingMsg.editTranslated('commands:ping.pong', [
+			{
+				latency: pingMsg.createdTimestamp - msg.createdTimestamp
+			}
+		]);
 	}
 
 }
