@@ -17,5 +17,5 @@
 		"declaration": true,
 		"moduleResolution": "node"
 	},
-	"include": ["src", "src/languages/**/*.json"]
+	"include": ["src", "config.ts", "src/languages/**/*.json"]
 }

@@ -1,4 +1,8 @@
 {
+    "eval": {
+        "error": "**Error ({{type}})**:{{output}}",
+        "success": "**Output ({{type}})**:{{output}}"
+    },
     "ping": {
         "ping": "Ping?",
         "pong": "Pong! Your ping is {{latency}}ms."
