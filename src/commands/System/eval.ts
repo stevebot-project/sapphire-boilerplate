@@ -17,15 +17,24 @@ export default class extends Command {
 
 		const { result, success, type } = await this.eval(msg, code);
 
-		return msg.channel.sendTranslated(success ? 'commands:eval.success' : 'commands:eval.error', [ // TODO: handle message > 2k characters
+		const overflow = codeBlock('js', result).length > 2000;
+
+		return msg.channel.sendTranslated(success ? 'commands:eval.success' : 'commands:eval.error', [
 			{
-				output: codeBlock('js', result),
+				output: overflow ? '' : codeBlock('js', result),
 				type
 			}
-		]);
+		], {
+			files: overflow
+				? [{
+					name: 'evalResult.js',
+					attachment: Buffer.from(result || '')
+				}]
+				: []
+		});
 	}
 
-	private async eval(msg: Message, code: string) {
+	private async eval(msg: Message, code: string): Promise<{ result: string | undefined; success: boolean; type: Type }> {
 		let result: unknown | undefined = undefined;
 		let success: boolean | undefined = undefined;
 		let type: Type | undefined = undefined;
@@ -43,11 +52,11 @@ export default class extends Command {
 			success = false;
 		}
 
-		if (typeof result !== 'string') {
-			result = result instanceof Error ? result.stack : inspect(result, { depth: 3 }); // TODO: use flag for determining depth
-		}
+		const resultString = typeof result === 'string'
+			? result
+			: result instanceof Error ? result.stack : inspect(result, { depth: 3 });
 
-		return { result, success, type };
+		return { result: resultString, success, type };
 	}
 
 }
